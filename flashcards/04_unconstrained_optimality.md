@@ -92,3 +92,23 @@ A: Because indicator-function-style gadgets encode NP-complete problems (3-SAT, 
 
 Q: How do unconstrained optimality conditions guide algorithm design?
 A: (i) Find stationary points: $\nabla f = \mathbf{0}$ — solve by iterative methods. (ii) Check sufficient conditions: $\nabla^2 f \succ 0$ → minimum; indefinite → saddle; $\nabla^2 f \prec 0$ → maximum. (iii) Near a strong-convex minimum, Newton-family methods achieve quadratic convergence. (iv) For nonconvex $f$, all guarantees are LOCAL; global optimization requires different tools (branch-and-bound, global solvers, or convex relaxations).
+
+## 4.13 Pattern Recognition
+
+Q: You found $\mathbf{x}^*$ with $\nabla f(\mathbf{x}^*) = \mathbf{0}$. How do you classify it?
+A: Check Hessian eigenvalues: all $> 0$ → strict local min; all $< 0$ → strict local max; mixed signs → saddle; some zero → degenerate (need higher-order test or direct evaluation).
+
+Q: You're optimizing convex $f$ and gradient descent is slow. What's the structural fix?
+A: Use second-order information: Newton's method (full Hessian) or quasi-Newton (BFGS, L-BFGS) — quadratic/superlinear convergence vs. gradient's linear rate.
+
+Q: You're optimizing in millions of dimensions and the Hessian won't fit in memory. What method?
+A: L-BFGS — limited-memory quasi-Newton. Stores only the last $m \approx 10$ gradient differences; gives near-Newton convergence with $O(mn)$ memory.
+
+Q: You're stuck near a saddle point in a nonconvex problem (gradient is small but you're not at a minimum). What's the fix?
+A: Add curvature awareness — Newton or trust-region methods escape saddles by using negative-curvature directions; pure gradient descent stalls. Stochastic noise (SGD) also escapes saddles in practice.
+
+Q: You have a smooth convex problem AND a closed-form gradient. What method?
+A: Accelerated gradient (Nesterov's momentum) — achieves $O(1/k^2)$ rate vs. plain gradient's $O(1/k)$, no Hessian required.
+
+Q: The function isn't differentiable (e.g., contains $|\cdot|$ or $\max$). What method class?
+A: Subgradient methods or proximal methods — replace gradient with a subgradient or use proximal operator of the nonsmooth part. Standard for L1-regularized problems.

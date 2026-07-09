@@ -1,6 +1,6 @@
 +++
 order = 12
-subject = "Math"
+subject = "Mathematics"
 tags = ["math", "optimization", "network-flows", "max-flow", "min-cost-flow", "combinatorial", "matching"]
 +++
 
@@ -8,14 +8,20 @@ tags = ["math", "optimization", "network-flows", "max-flow", "min-cost-flow", "c
 
 ## 12.1 What a Flow Network Is
 
-C: A [flow network] is a directed graph $G = (V, E)$ with a nonnegative [capacity] $u_{ij}$ on each edge $(i, j) \in E$, a distinguished [source] $s \in V$, and a distinguished [sink] $t \in V$.
+C: A [flow network] is a directed graph $G = (V, E)$ with a nonnegative capacity $u_{ij}$ on each edge $(i, j) \in E$, a distinguished source $s \in V$, and a distinguished sink $t \in V$.
+
+C: In a flow network, the nonnegative number $u_{ij}$ attached to each edge $(i, j) \in E$ is its [capacity].
+
+C: In a flow network, the distinguished node $s$ is the [source] and the distinguished node $t$ is the [sink].
 
 Q: Why is network flow a special class of LP worth studying separately?
 A: Because flow LPs have a TOTALLY UNIMODULAR constraint matrix: the LP relaxation of an integer flow problem automatically has integer-valued optimal vertices. Integer flow is solvable as an LP — no branch-and-bound needed. Additionally, specialized algorithms (augmenting path, push-relabel) beat general LP by orders of magnitude on network structure.
 
 ## 12.2 Flows and Feasibility
 
-C: A [flow] in a network is a function $f: E \to \mathbb{R}_{\geq 0}$ satisfying (i) [capacity]: $0 \leq f_{ij} \leq u_{ij}$ for each edge and (ii) [conservation]: $\sum_j f_{ji} = \sum_j f_{ij}$ for every node except $s$ and $t$ — what comes in equals what goes out.
+C: A [flow] in a network is a function $f: E \to \mathbb{R}_{\geq 0}$ satisfying the capacity condition $0 \leq f_{ij} \leq u_{ij}$ on each edge and conservation $\sum_j f_{ji} = \sum_j f_{ij}$ at every node except $s$ and $t$.
+
+C: In the definition of a network flow, the condition $0 \leq f_{ij} \leq u_{ij}$ on each edge is [capacity] and the condition $\sum_j f_{ji} = \sum_j f_{ij}$ at every node except $s$ and $t$ is [conservation] — what comes in equals what goes out.
 
 Q: What is the [value] of an $s$-$t$ flow?
 A: $|f| = \sum_j f_{sj} - \sum_j f_{js}$ — net flow out of the source. By conservation, equivalent to net flow into the sink: $\sum_j f_{jt} - \sum_j f_{tj}$. Total throughput the network carries from $s$ to $t$.
@@ -30,7 +36,7 @@ A: Variables $f_{ij}$ for each edge. Maximize $\sum_j f_{sj} - \sum_j f_{js}$ s.
 
 ## 12.4 s-t Cuts
 
-C: An [s-t cut] is a partition of $V$ into sets $S$ and $T = V \setminus S$ with $s \in S$, $t \in T$. Its [capacity] is $C(S, T) = \sum_{(i, j) \in E : i \in S, j \in T} u_{ij}$ — sum of capacities of edges crossing from $S$ to $T$.
+C: An [s-t cut] is a partition of $V$ into sets $S$ and $T = V \setminus S$ with $s \in S$, $t \in T$. Its [capacity] is $C(S, T) = \sum_{(i, j) \in E : i \in S, j \in T} u_{ij}$ — the sum of $u_{ij}$ over edges crossing from $S$ to $T$.
 
 Q: What is the [max-flow min-cut theorem]?
 A: For any flow network: the maximum value of an $s$-$t$ flow EQUALS the minimum capacity of an $s$-$t$ cut. "Bottleneck" intuition: the flow is limited exactly by the smallest "choke point" across the network. Proved via augmenting paths; a fundamental LP-duality instance (max-flow LP and min-cut LP are dual).
@@ -40,7 +46,10 @@ A: Because the LP dual of max-flow is exactly the min-cut LP: dual variables cor
 
 ## 12.5 Augmenting Paths
 
-C: An [augmenting path] is a simple path from $s$ to $t$ in the [residual graph] along which the flow can be increased. The residual graph has forward edges $(i, j)$ with residual capacity $u_{ij} - f_{ij}$ and backward edges $(j, i)$ with residual capacity $f_{ij}$.
+C: An [augmenting path] is a simple path from $s$ to $t$ in the residual graph along which the flow can be increased.
+
+Q: Given a flow $f$, what edges make up the [residual graph]?
+A: Forward edges $(i, j)$ with residual capacity $u_{ij} - f_{ij}$ and backward edges $(j, i)$ with residual capacity $f_{ij}$.
 
 Q: Describe the [Ford-Fulkerson] augmenting path algorithm.
 A: Start with zero flow. Repeat: find an augmenting path in the residual graph; push as much flow as the bottleneck edge allows; update residual graph. Terminate when no augmenting path exists. By max-flow min-cut, this gives an optimal flow. Termination guaranteed for integer capacities (each augmentation adds $\geq 1$ flow).

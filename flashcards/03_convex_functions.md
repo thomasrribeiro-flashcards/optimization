@@ -1,6 +1,6 @@
 +++
 order = 3
-subject = "Math"
+subject = "Mathematics"
 tags = ["math", "optimization", "convex-functions", "jensen", "epigraph", "smoothness"]
 +++
 
@@ -67,7 +67,15 @@ A: Because $\mu$ bounds the valley curvature from below (how curved is the funct
 ## 3.8 Operations Preserving Convexity
 
 Q: What operations on convex functions preserve convexity?
-A: (i) [Nonnegative weighted sum]: $\alpha f + \beta g$ convex for $\alpha, \beta \geq 0$. (ii) [Composition with affine]: $f(A\mathbf{x} + \mathbf{b})$ convex if $f$ is. (iii) [Pointwise supremum]: $\sup_i f_i(\mathbf{x})$ convex. (iv) [Partial minimization]: $\inf_{\mathbf{y}} f(\mathbf{x}, \mathbf{y})$ convex in $\mathbf{x}$ if $f$ is jointly convex. (v) [Perspective]: $(\mathbf{x}, t) \mapsto t f(\mathbf{x}/t)$ for $t > 0$.
+A: Nonnegative weighted sums, composition with affine maps, pointwise suprema, partial minimization, and the perspective transform.
+
+C: Convexity is preserved under [nonnegative weighted sums]: $\alpha f + \beta g$ is convex for convex $f, g$ and $\alpha, \beta \geq 0$.
+
+C: Convexity is preserved under [composition with an affine map]: $f(A\mathbf{x} + \mathbf{b})$ is convex if $f$ is.
+
+C: Convexity is preserved under [partial minimization]: $\inf_{\mathbf{y}} f(\mathbf{x}, \mathbf{y})$ is convex in $\mathbf{x}$ if $f$ is jointly convex.
+
+C: The [perspective] of a convex $f$, $(\mathbf{x}, t) \mapsto t f(\mathbf{x}/t)$ for $t > 0$, is convex.
 
 Q: Why is the [pointwise supremum] of convex functions convex?
 A: Because $\text{epi}(\sup_i f_i) = \bigcap_i \text{epi}(f_i)$ — intersection of convex sets is convex. Extremely useful: the max of many affine functions is a [piecewise-linear convex function]; the max of convex quadratics is convex. Lets you build complicated convex functions by "envelope" constructions.
@@ -75,7 +83,7 @@ A: Because $\text{epi}(\sup_i f_i) = \bigcap_i \text{epi}(f_i)$ — intersection
 ## 3.9 Common Convex Functions
 
 Q: Give three simple convex functions of one variable.
-A: (Answered individually below.)
+A: Powers $x^p$ (for $p \geq 1$, $x \geq 0$), exponentials $e^{ax}$, and the negative logarithm $-\log x$ on $(0, \infty)$.
 
 Q: Why is $f(x) = x^p$ convex for $p \geq 1$ and $x \geq 0$?
 A: Because its second derivative $f''(x) = p(p-1)x^{p-2} \geq 0$ for $p \geq 1$, $x \geq 0$. Strictly convex for $p > 1$. Includes $x^2$ (strictly convex — the workhorse quadratic), $|x|^p$ (convex for $p \geq 1$, giving $\ell_p$ norms).

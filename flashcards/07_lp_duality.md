@@ -1,6 +1,6 @@
 +++
 order = 7
-subject = "Math"
+subject = "Mathematics"
 tags = ["math", "optimization", "duality", "linear-programming", "weak-duality", "strong-duality", "complementary-slackness"]
 +++
 
@@ -65,16 +65,21 @@ Q: What happens to the dual if the primal is [unbounded below]?
 A: The dual is [infeasible]: no dual feasible point can give a finite upper bound on an unbounded objective. Formally: weak duality forces $\mathbf{b}^T \mathbf{y} \leq \mathbf{c}^T \mathbf{x}$; if the primal descends to $-\infty$, no $\mathbf{y}$ can satisfy this.
 
 Q: What happens to the primal if the dual is unbounded above?
-A: The primal is infeasible. Symmetric: an unbounded dual objective means no primal feasible point can upper-bound it. Combined with primal unboundedness ↔ dual infeasibility, we get FOUR primal-dual combinations:
-- primal finite, dual finite (both optimal, values equal)
-- primal unbounded, dual infeasible
-- primal infeasible, dual unbounded
-- BOTH infeasible (can happen — no symmetry breaks this)
+A: The primal is infeasible. Symmetric: an unbounded dual objective means no primal feasible point can upper-bound it.
+
+Q: What are the four possible primal-dual status combinations for an LP pair?
+A: (i) Primal finite, dual finite (both optimal, values equal). (ii) Primal unbounded, dual infeasible. (iii) Primal infeasible, dual unbounded. (iv) BOTH infeasible (can happen — no symmetry breaks this).
 
 ## 7.9 Constructing the Dual Systematically
 
-Q: What are the rules for forming the dual of a general LP?
-A: Use the "[primal-dual transformation]" rules: (i) primal $\min$ ↔ dual $\max$. (ii) primal constraint $\geq$ ↔ dual variable $\geq 0$; $\leq$ ↔ dual variable $\leq 0$; $=$ ↔ dual variable free. (iii) primal variable $\geq 0$ ↔ dual constraint $\leq$; $\leq 0$ ↔ dual constraint $\geq$; free ↔ dual constraint $=$. A table is easy to memorize; the pattern is sign conventions.
+Q: In the [primal-dual transformation] rules, how does the objective sense transform?
+A: Primal $\min$ ↔ dual $\max$ — flip the optimization sense.
+
+Q: In the [primal-dual transformation] rules (primal $\min$), what dual-variable sign does each primal constraint type produce?
+A: Constraint $\geq$ ↔ dual variable $\geq 0$; $\leq$ ↔ dual variable $\leq 0$; $=$ ↔ dual variable free.
+
+Q: In the [primal-dual transformation] rules (primal $\min$), what dual-constraint type does each primal variable sign produce?
+A: Variable $\geq 0$ ↔ dual constraint $\leq$; variable $\leq 0$ ↔ dual constraint $\geq$; free variable ↔ dual constraint $=$. The pattern is sign conventions.
 
 ## 7.10 The Dual Simplex Method
 

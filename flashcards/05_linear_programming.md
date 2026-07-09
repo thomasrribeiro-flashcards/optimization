@@ -1,6 +1,6 @@
 +++
 order = 5
-subject = "Math"
+subject = "Mathematics"
 tags = ["math", "optimization", "linear-programming", "lp", "polyhedra", "standard-form"]
 +++
 
@@ -20,8 +20,17 @@ C: The [LP standard form] is $\min \mathbf{c}^T \mathbf{x}$ subject to $A\mathbf
 
 C: The [LP canonical form] is $\min \mathbf{c}^T \mathbf{x}$ subject to $A\mathbf{x} \leq \mathbf{b}$, $\mathbf{x} \geq \mathbf{0}$ — inequality constraints.
 
-Q: How is a general LP converted to standard form?
-A: (i) $\min$ / $\max$: flip sign of $\mathbf{c}$ to always minimize. (ii) Inequality $A\mathbf{x} \leq \mathbf{b}$: add [slack variable] $\mathbf{s} \geq \mathbf{0}$ giving $A\mathbf{x} + \mathbf{s} = \mathbf{b}$. (iii) $A\mathbf{x} \geq \mathbf{b}$: subtract [surplus variable]. (iv) Free variable $x_i \in \mathbb{R}$: split as $x_i = x_i^+ - x_i^-$ with $x_i^+, x_i^- \geq \mathbf{0}$. Any LP can be brought to standard form mechanically.
+Q: When converting an LP to standard form, how is a $\max$ objective handled?
+A: Flip the sign of $\mathbf{c}$ to always minimize: $\max \mathbf{c}^T\mathbf{x}$ becomes $\min (-\mathbf{c})^T\mathbf{x}$.
+
+Q: When converting an LP to standard form, how is an inequality constraint $A\mathbf{x} \leq \mathbf{b}$ handled?
+A: Add a [slack variable] $\mathbf{s} \geq \mathbf{0}$ giving $A\mathbf{x} + \mathbf{s} = \mathbf{b}$.
+
+Q: When converting an LP to standard form, how is a $\geq$ constraint $A\mathbf{x} \geq \mathbf{b}$ handled?
+A: Subtract a [surplus variable] $\mathbf{s} \geq \mathbf{0}$ giving $A\mathbf{x} - \mathbf{s} = \mathbf{b}$.
+
+Q: When converting an LP to standard form, how is a free variable $x_i \in \mathbb{R}$ handled?
+A: Split as $x_i = x_i^+ - x_i^-$ with $x_i^+, x_i^- \geq 0$. With the sign-flip, slack, and surplus tricks, any LP can be brought to standard form mechanically.
 
 ## 5.3 The Feasible Polytope
 

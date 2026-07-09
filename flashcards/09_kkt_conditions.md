@@ -1,6 +1,6 @@
 +++
 order = 9
-subject = "Math"
+subject = "Mathematics"
 tags = ["math", "optimization", "kkt", "inequality-constraints", "constraint-qualification", "complementary-slackness"]
 +++
 
@@ -27,12 +27,14 @@ A: Because $g_i(\mathbf{x}) \leq 0$ means the feasible side is where $g_i \leq 0
 
 ## 9.4 The KKT Conditions
 
-Q: State the [KKT first-order necessary conditions].
-A: If $\mathbf{x}^*$ is a local minimum and a constraint qualification holds, there exist multipliers $\boldsymbol{\mu}^*, \boldsymbol{\lambda}^*$ such that:
-(i) [Stationarity]: $\nabla f(\mathbf{x}^*) + \sum_i \mu_i^* \nabla g_i(\mathbf{x}^*) + \sum_j \lambda_j^* \nabla h_j(\mathbf{x}^*) = \mathbf{0}$.
-(ii) [Primal feasibility]: $g_i(\mathbf{x}^*) \leq 0$, $h_j(\mathbf{x}^*) = 0$.
-(iii) [Dual feasibility]: $\mu_i^* \geq 0$.
-(iv) [Complementary slackness]: $\mu_i^* g_i(\mathbf{x}^*) = 0$.
+Q: Name the four condition groups of the [KKT first-order necessary conditions].
+A: Stationarity, primal feasibility, dual feasibility, complementary slackness — these hold at a local minimum $\mathbf{x}^*$, for some multipliers $\boldsymbol{\mu}^*, \boldsymbol{\lambda}^*$, provided a constraint qualification holds.
+
+Q: State the [stationarity] condition of the KKT system.
+A: $\nabla f(\mathbf{x}^*) + \sum_i \mu_i^* \nabla g_i(\mathbf{x}^*) + \sum_j \lambda_j^* \nabla h_j(\mathbf{x}^*) = \mathbf{0}$.
+
+Q: State [primal feasibility] and [dual feasibility] in the KKT system.
+A: Primal feasibility: $g_i(\mathbf{x}^*) \leq 0$ and $h_j(\mathbf{x}^*) = 0$. Dual feasibility: $\mu_i^* \geq 0$.
 
 ## 9.5 Complementary Slackness
 
@@ -48,7 +50,7 @@ Q: Why are [constraint qualifications] needed for the KKT conditions?
 A: Because KKT is only a necessary condition IF the active constraint gradients are "nice enough" — linearly independent, or related regularity. Without a qualification, a local minimum may NOT satisfy KKT (multipliers may not exist). Constraint qualifications ensure the nonlinear constraints locally look like linear ones.
 
 Q: Name three common [constraint qualifications] in increasing generality.
-A: (Answered individually below.)
+A: LICQ, MFCQ, then Slater's condition (for convex problems).
 
 Q: What is [LICQ (Linear Independence Constraint Qualification)]?
 A: The gradients of active inequality constraints together with all equality constraint gradients are linearly independent at $\mathbf{x}^*$. Simplest CQ; implies uniqueness of KKT multipliers. Most commonly assumed in theory.

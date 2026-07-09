@@ -1,6 +1,6 @@
 +++
 order = 11
-subject = "Math"
+subject = "Mathematics"
 tags = ["math", "optimization", "integer-programming", "ilp", "branch-and-bound", "cutting-planes", "combinatorial"]
 +++
 

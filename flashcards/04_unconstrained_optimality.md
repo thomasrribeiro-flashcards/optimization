@@ -1,6 +1,6 @@
 +++
 order = 4
-subject = "Math"
+subject = "Mathematics"
 tags = ["math", "optimization", "unconstrained", "optimality-conditions", "gradient", "hessian"]
 +++
 

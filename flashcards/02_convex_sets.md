@@ -1,6 +1,6 @@
 +++
 order = 2
-subject = "Math"
+subject = "Mathematics"
 tags = ["math", "optimization", "convex-sets", "polyhedra", "cones", "hulls"]
 +++
 
@@ -26,7 +26,7 @@ Q: Why is the segment-containment definition equivalent to requiring all convex 
 A: By induction: $2$-point combinations (the definition) yield segments. A $3$-point combination can be written as a convex combination of a 2-point result and the third point — staying in $C$ by the definition. Extending to $k$ points: any convex combination is a convex combination of a convex combination, so convexity closes under arbitrary finite convex combinations.
 
 Q: Name three basic examples of convex sets in $\mathbb{R}^n$.
-A: (Answered individually in the next three cards.)
+A: Half-spaces, Euclidean balls, and affine subspaces.
 
 Q: Why is every [half-space] $\{\mathbf{x} : \mathbf{a}^T \mathbf{x} \leq b\}$ convex?
 A: Because the map $\mathbf{x} \mapsto \mathbf{a}^T \mathbf{x}$ is linear, so for any $\mathbf{x}, \mathbf{y}$ in the half-space and $\lambda \in [0, 1]$: $\mathbf{a}^T (\lambda \mathbf{x} + (1-\lambda)\mathbf{y}) = \lambda \mathbf{a}^T\mathbf{x} + (1-\lambda) \mathbf{a}^T\mathbf{y} \leq \lambda b + (1-\lambda) b = b$. The weighted average of two numbers both $\leq b$ is $\leq b$.
@@ -40,7 +40,11 @@ A: Because linearity gives $A(\lambda \mathbf{x} + (1-\lambda)\mathbf{y}) = \lam
 ## 2.4 Operations Preserving Convexity
 
 Q: What operations preserve convexity of sets?
-A: (i) [Intersection]: $C_1 \cap C_2$ convex if both are. (ii) [Affine image / preimage]: $\{A\mathbf{x} + \mathbf{b} : \mathbf{x} \in C\}$ convex if $C$ is; $\{\mathbf{x} : A\mathbf{x} + \mathbf{b} \in C\}$ convex if $C$ is. (iii) [Cartesian product]: $C_1 \times C_2$. (iv) [Minkowski sum]: $C_1 + C_2 = \{\mathbf{x} + \mathbf{y} : \mathbf{x} \in C_1, \mathbf{y} \in C_2\}$. Union does NOT preserve convexity.
+A: Intersection, affine images and preimages, Cartesian products, and Minkowski sums. Union does NOT preserve convexity.
+
+C: The [Minkowski sum] of convex sets, $C_1 + C_2 = \{\mathbf{x} + \mathbf{y} : \mathbf{x} \in C_1, \mathbf{y} \in C_2\}$, is convex.
+
+C: The [affine image] $\{A\mathbf{x} + \mathbf{b} : \mathbf{x} \in C\}$ and [affine preimage] $\{\mathbf{x} : A\mathbf{x} + \mathbf{b} \in C\}$ of a convex set $C$ are convex.
 
 Q: Why is the intersection of arbitrarily many convex sets still convex?
 A: Because convexity is a pointwise property of pairs: if $\mathbf{x}, \mathbf{y}$ are both in every $C_i$, then so is $\lambda \mathbf{x} + (1-\lambda)\mathbf{y}$ (from each $C_i$ individually) — hence in the intersection. Extends to infinite intersections. Consequence: the feasible region of any problem with convex inequality constraints is convex (intersection of convex half-spaces / level sets).
@@ -66,7 +70,7 @@ C: A [cone] is a set closed under nonnegative scalar multiplication: if $\mathbf
 C: A [convex cone] is a cone that is also convex — equivalently, closed under nonnegative linear combinations: $\alpha_1 \mathbf{x}_1 + \alpha_2 \mathbf{x}_2 \in K$ for all $\alpha_i \geq 0$, $\mathbf{x}_i \in K$.
 
 Q: Give three convex cones that appear throughout optimization.
-A: (Answered individually below.)
+A: The nonnegative orthant $\mathbb{R}^n_+$, the second-order cone $\mathcal{L}^n$, and the positive semidefinite cone $\mathcal{S}_+^n$.
 
 Q: What is the [nonnegative orthant] as a convex cone?
 A: $\mathbb{R}^n_+ = \{\mathbf{x} \in \mathbb{R}^n : x_i \geq 0 \text{ for all } i\}$ — the set of componentwise-nonnegative vectors. The feasible cone of LPs in standard form. Trivially a convex cone: sum of componentwise-nonnegative vectors is componentwise-nonnegative.

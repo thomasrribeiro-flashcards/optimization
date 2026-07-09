@@ -1,6 +1,6 @@
 +++
 order = 6
-subject = "Math"
+subject = "Mathematics"
 tags = ["math", "optimization", "simplex", "interior-point", "lp-algorithms", "pivoting"]
 +++
 
@@ -16,7 +16,9 @@ A: Because adjacent BFSs differ by exactly one [basic variable] — one variable
 
 ## 6.2 Basic Variables and Basis
 
-C: For an LP in standard form $\min \mathbf{c}^T \mathbf{x}$ s.t. $A\mathbf{x} = \mathbf{b}$, $\mathbf{x} \geq \mathbf{0}$: a [basis] $B$ is a set of $m$ linearly independent columns of $A$. The corresponding $B$-variables are [basic]; the rest are [nonbasic].
+C: For an LP in standard form $\min \mathbf{c}^T \mathbf{x}$ s.t. $A\mathbf{x} = \mathbf{b}$, $\mathbf{x} \geq \mathbf{0}$: a [basis] $B$ is a set of $m$ linearly independent columns of $A$.
+
+C: Given a basis $B$ for an LP in standard form, the corresponding $B$-variables are [basic]; the rest are [nonbasic].
 
 Q: How is a [basic feasible solution] (BFS) constructed from a basis $B$?
 A: Set nonbasic variables to zero; solve $A_B \mathbf{x}_B = \mathbf{b}$ for the basic variables (since $A_B$ is $m \times m$ invertible). Feasibility requires $\mathbf{x}_B \geq \mathbf{0}$. Each BFS corresponds to choosing $m$ columns to make nonzero — combinatorial structure: $\binom{n}{m}$ potential bases.
@@ -96,7 +98,7 @@ A: Because well-scaled matrices (columns and rows of similar magnitude) give sim
 
 ## 6.12 Computational Reality
 
-P: A small LP: $\max 3x_1 + 5x_2$ subject to $x_1 \leq 4$, $2x_2 \leq 12$, $3x_1 + 2x_2 \leq 18$, $x_1, x_2 \geq 0$.
+P: Solve by the simplex method: $\max 3x_1 + 5x_2$ subject to $x_1 \leq 4$, $2x_2 \leq 12$, $3x_1 + 2x_2 \leq 18$, $x_1, x_2 \geq 0$.
 S:
 **IDENTIFY**: 2 variables, 3 constraints. Simple enough to graph.
 
@@ -104,4 +106,4 @@ S:
 
 **EXECUTE**: Add slacks $s_1, s_2, s_3 \geq 0$: $x_1 + s_1 = 4$, $2x_2 + s_2 = 12$, $3x_1 + 2x_2 + s_3 = 18$. Initial BFS: $\mathbf{x} = (0, 0, 4, 12, 18)$. Reduced costs of $x_1, x_2$: $-3, -5$. Most negative: $x_2$ enters. Ratio test: min of $(12/2, 18/2) = 6$ at $s_2$; $s_2$ leaves. New BFS: $x_2 = 6$. Iterate: $x_1$ enters next, $s_3$ leaves. Terminate at $(x_1, x_2) = (2, 6)$, objective $3(2) + 5(6) = 36$.
 
-**EVALUATE**: Optimal at a vertex, as LP theory predicted. Two pivots sufficed for this small example. The method generalizes unchanged to millions of variables — only the per-pivot linear algebra gets heavier.
+**EVALUATE**: Check $(2, 6)$ against the original constraints: $2 \leq 4$ ✓, $2(6) = 12 \leq 12$ (active), $3(2) + 2(6) = 18 \leq 18$ (active) — two active constraints pin a vertex, as LP theory predicts, and all reduced costs are nonnegative at termination, certifying optimality. Two pivots sufficed for this small example. The method generalizes unchanged to millions of variables — only the per-pivot linear algebra gets heavier.

@@ -1,6 +1,6 @@
 +++
 order = 10
-subject = "Math"
+subject = "Mathematics"
 tags = ["math", "optimization", "duality", "nonlinear-programming", "slater", "duality-gap", "saddle-point"]
 +++
 
@@ -80,5 +80,8 @@ A: Dual: $\max \mathbf{b}^T \mathbf{y}$ s.t. $\mathbf{c} - A^T \mathbf{y} \in K^
 
 ## 10.12 Algorithmic Consequences
 
-Q: How is duality used PRACTICALLY in nonlinear optimization algorithms?
-A: (i) Dual bounds: solving the dual gives lower bounds on the primal (used in branch-and-bound, cutting planes). (ii) Primal-dual methods (interior-point) update primal and dual variables simultaneously. (iii) Certificate of optimality: a primal-dual pair with zero gap and satisfying complementary slackness PROVES optimality. (iv) Sensitivity analysis: dual variables quantify constraint-relaxation value. (v) Decomposition: dual decouples structured problems into parallel subproblems.
+Q: How is duality used to BOUND and CERTIFY solutions in nonlinear optimization?
+A: Dual feasible points give lower bounds on the primal (used in branch-and-bound and cutting planes), and a primal-dual pair with zero gap satisfying complementary slackness PROVES optimality.
+
+Q: Beyond bounds and optimality certificates, how is duality used ALGORITHMICALLY in nonlinear optimization?
+A: Primal-dual (interior-point) methods update primal and dual variables simultaneously; dual variables quantify constraint-relaxation value (sensitivity analysis); dual decomposition decouples structured problems into parallel subproblems.

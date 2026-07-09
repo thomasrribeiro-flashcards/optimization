@@ -1,6 +1,6 @@
 +++
 order = 1
-subject = "Math"
+subject = "Mathematics"
 tags = ["math", "optimization", "introduction", "feasibility", "minimization"]
 +++
 
@@ -20,7 +20,11 @@ C: The [decision variable] (also called [optimization variable]) $\mathbf{x} \in
 
 C: The [objective function] $f: \mathbb{R}^n \to \mathbb{R}$ assigns a real-valued score to every choice of $\mathbf{x}$; the optimizer seeks $\mathbf{x}$ minimizing $f$.
 
-C: A [constraint] is a condition restricting which $\mathbf{x}$ are permissible — typically written $g_i(\mathbf{x}) \leq 0$ ([inequality constraint]) or $h_j(\mathbf{x}) = 0$ ([equality constraint]).
+C: A [constraint] is a condition restricting which $\mathbf{x}$ are permissible — typically written $g_i(\mathbf{x}) \leq 0$ or $h_j(\mathbf{x}) = 0$.
+
+C: A constraint of the form $g_i(\mathbf{x}) \leq 0$ is an [inequality constraint].
+
+C: A constraint of the form $h_j(\mathbf{x}) = 0$ is an [equality constraint].
 
 Q: What is the [feasible set] of an optimization problem?
 A: The set $\mathcal{F} = \{\mathbf{x} \in \mathcal{X} : g_i(\mathbf{x}) \leq 0, h_j(\mathbf{x}) = 0 \text{ for all } i, j\}$ of all $\mathbf{x}$ satisfying every constraint. The optimizer searches only within $\mathcal{F}$; points outside are [infeasible].
@@ -95,8 +99,14 @@ A: [Modeling language] (CVXPY, JuMP, AMPL, GAMS) lets users write problems symbo
 
 ## 1.11 Optimization in Applications
 
-Q: Name three representative application domains and their dominant optimization flavors.
-A: [Machine learning]: unconstrained smooth nonconvex (SGD on neural nets), convex QP (SVM), LP (linear regression with $\ell_1$). [Operations research]: LP (production planning), integer LP (scheduling, routing). [Control theory]: convex QP (MPC), SDP (robust control). Different communities, same underlying framework.
+Q: What optimization flavors dominate [machine learning]?
+A: Unconstrained smooth nonconvex (SGD on neural nets), convex QP (SVM), and LP (linear regression with $\ell_1$).
+
+Q: What optimization flavors dominate [operations research]?
+A: LP (production planning) and integer LP (scheduling, routing).
+
+Q: What optimization flavors dominate [control theory]?
+A: Convex QP (MPC) and SDP (robust control).
 
 ## 1.12 Taxonomy Summary
 

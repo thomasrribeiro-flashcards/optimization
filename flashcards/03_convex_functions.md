@@ -8,7 +8,7 @@ tags = ["math", "optimization", "convex-functions", "jensen", "epigraph", "smoot
 
 ## 3.1 Defining Convex Functions
 
-C: A function $f: \mathbb{R}^n \to \mathbb{R}$ is [convex] if its domain is a convex set AND for every $\mathbf{x}, \mathbf{y}$ and $\lambda \in [0, 1]$: $f(\lambda \mathbf{x} + (1 - \lambda)\mathbf{y}) \leq \lambda f(\mathbf{x}) + (1 - \lambda) f(\mathbf{y})$.
+C: A function $f: \mathbb{R}^n \to \mathbb{R}$ is [convex] if its domain is a convex set AND for every $\mathbf{x}, \mathbf{y}$ and $\lambda \in \lbrack 0, 1\rbrack $: $f(\lambda \mathbf{x} + (1 - \lambda)\mathbf{y}) \leq \lambda f(\mathbf{x}) + (1 - \lambda) f(\mathbf{y})$.
 
 Q: What does the convexity inequality $f(\lambda \mathbf{x} + (1 - \lambda) \mathbf{y}) \leq \lambda f(\mathbf{x}) + (1 - \lambda) f(\mathbf{y})$ mean geometrically?
 A: The graph of $f$ lies ON OR BELOW every chord connecting two points on the graph. "Curves up (or is straight)." Equivalently: the chord from $(\mathbf{x}, f(\mathbf{x}))$ to $(\mathbf{y}, f(\mathbf{y}))$ is never below the graph between them. Captures the intuition of a "bowl-shaped" function.

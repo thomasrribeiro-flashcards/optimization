@@ -20,7 +20,7 @@ A: A [linear combination] allows any real weights; a convex combination requires
 
 ## 2.3 Convex Sets
 
-C: A set $C \subseteq \mathbb{R}^n$ is [convex] if for every two points $\mathbf{x}, \mathbf{y} \in C$ and every $\lambda \in [0, 1]$, the point $\lambda \mathbf{x} + (1 - \lambda) \mathbf{y}$ is also in $C$ — the entire line segment between any two points stays inside.
+C: A set $C \subseteq \mathbb{R}^n$ is [convex] if for every two points $\mathbf{x}, \mathbf{y} \in C$ and every $\lambda \in \lbrack 0, 1\rbrack $, the point $\lambda \mathbf{x} + (1 - \lambda) \mathbf{y}$ is also in $C$ — the entire line segment between any two points stays inside.
 
 Q: Why is the segment-containment definition equivalent to requiring all convex combinations to lie in the set?
 A: By induction: $2$-point combinations (the definition) yield segments. A $3$-point combination can be written as a convex combination of a 2-point result and the third point — staying in $C$ by the definition. Extending to $k$ points: any convex combination is a convex combination of a convex combination, so convexity closes under arbitrary finite convex combinations.

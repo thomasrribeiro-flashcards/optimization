@@ -8,7 +8,7 @@ tags = ["math", "optimization", "duality", "nonlinear-programming", "slater", "d
 
 ## 10.1 The Lagrangian Dual Function
 
-C: For the problem $\min f(\mathbf{x})$ s.t. $g_i(\mathbf{x}) \leq 0$, $h_j(\mathbf{x}) = 0$, the [Lagrangian dual function] is $q(\boldsymbol{\mu}, \boldsymbol{\lambda}) = \inf_{\mathbf{x}} \mathcal{L}(\mathbf{x}, \boldsymbol{\mu}, \boldsymbol{\lambda}) = \inf_{\mathbf{x}} [f(\mathbf{x}) + \boldsymbol{\mu}^T \mathbf{g}(\mathbf{x}) + \boldsymbol{\lambda}^T \mathbf{h}(\mathbf{x})]$.
+C: For the problem $\min f(\mathbf{x})$ s.t. $g_i(\mathbf{x}) \leq 0$, $h_j(\mathbf{x}) = 0$, the [Lagrangian dual function] is $q(\boldsymbol{\mu}, \boldsymbol{\lambda}) = \inf_{\mathbf{x}} \mathcal{L}(\mathbf{x}, \boldsymbol{\mu}, \boldsymbol{\lambda}) = \inf_{\mathbf{x}} \lbrack f(\mathbf{x}) + \boldsymbol{\mu}^T \mathbf{g}(\mathbf{x}) + \boldsymbol{\lambda}^T \mathbf{h}(\mathbf{x})\rbrack $.
 
 Q: Why is the dual function $q(\boldsymbol{\mu}, \boldsymbol{\lambda})$ always CONCAVE, even for nonconvex primal problems?
 A: Because $q$ is the pointwise INFIMUM of affine functions in $(\boldsymbol{\mu}, \boldsymbol{\lambda})$: for each fixed $\mathbf{x}$, $\mathcal{L}(\mathbf{x}, \cdot, \cdot)$ is affine in $(\boldsymbol{\mu}, \boldsymbol{\lambda})$; infimum of affine functions is concave. Beautifully robust: the dual is always a convex optimization problem regardless of primal structure.

@@ -1,6 +1,6 @@
 +++
 order = 2
-subject = "Mathematics"
+subject = "mathematics"
 tags = ["math", "optimization", "convex-sets", "polyhedra", "cones", "hulls"]
 +++
 

@@ -1,6 +1,6 @@
 +++
 order = 12
-subject = "Mathematics"
+subject = "mathematics"
 tags = ["math", "optimization", "network-flows", "max-flow", "min-cost-flow", "combinatorial", "matching"]
 +++
 

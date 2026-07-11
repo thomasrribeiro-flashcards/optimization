@@ -1,6 +1,6 @@
 +++
 order = 5
-subject = "Mathematics"
+subject = "mathematics"
 tags = ["math", "optimization", "linear-programming", "lp", "polyhedra", "standard-form"]
 +++
 

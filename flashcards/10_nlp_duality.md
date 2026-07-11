@@ -1,6 +1,6 @@
 +++
 order = 10
-subject = "Mathematics"
+subject = "mathematics"
 tags = ["math", "optimization", "duality", "nonlinear-programming", "slater", "duality-gap", "saddle-point"]
 +++
 

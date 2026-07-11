@@ -1,6 +1,6 @@
 +++
 order = 9
-subject = "Mathematics"
+subject = "mathematics"
 tags = ["math", "optimization", "kkt", "inequality-constraints", "constraint-qualification", "complementary-slackness"]
 +++
 

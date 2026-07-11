@@ -1,6 +1,6 @@
 +++
 order = 1
-subject = "Mathematics"
+subject = "mathematics"
 tags = ["math", "optimization", "introduction", "feasibility", "minimization"]
 +++
 

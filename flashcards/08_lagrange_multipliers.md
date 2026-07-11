@@ -1,6 +1,6 @@
 +++
 order = 8
-subject = "Mathematics"
+subject = "mathematics"
 tags = ["math", "optimization", "lagrange-multipliers", "equality-constraints", "constrained-optimization"]
 +++
 

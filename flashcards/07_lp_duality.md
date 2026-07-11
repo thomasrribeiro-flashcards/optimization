@@ -1,6 +1,6 @@
 +++
 order = 7
-subject = "Mathematics"
+subject = "mathematics"
 tags = ["math", "optimization", "duality", "linear-programming", "weak-duality", "strong-duality", "complementary-slackness"]
 +++
 

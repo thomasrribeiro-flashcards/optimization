@@ -1,6 +1,6 @@
 +++
 order = 6
-subject = "Mathematics"
+subject = "mathematics"
 tags = ["math", "optimization", "simplex", "interior-point", "lp-algorithms", "pivoting"]
 +++
 
